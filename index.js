@@ -15,7 +15,9 @@ app.get(`/api/endpoint/:id`, (request, response) => {
     const record = getRecord(id);
 
     if(!record) {
-        response.status(404).send({ error: `Error retrieving response with ID#${id}`})
+        response.status(404).send({ 
+            error: `Error retrieving response with ID#${id}`
+        })
     } else {
         response.send({ data: record });
     }
